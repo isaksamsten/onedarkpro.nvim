@@ -76,7 +76,7 @@ end
 function M.replace_vars(vars, values)
     if type(vars) == "string" then return replace_var(vars, values) end
 
-    if type(vars) == "number" then return vars end
+    if type(vars) == "number" or type(vars) == "boolean" then return vars end
 
     for key, value in pairs(vars) do
         vars[key] = M.replace_vars(value, values)
